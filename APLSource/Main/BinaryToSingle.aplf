@@ -1,0 +1,12 @@
+ BinaryToSingle←{
+ ⍝ ⍵ ←→ 32 Bits
+ ⍝ ← ←→ ⍝ IEEE-754 Single Precision Float
+ ⍝ TODO: Worry about NaNs
+     ⎕IO←0
+     p←1@(1+0 8)⊢32⍴0
+     bs be bm←(1++\p)⊆⍵
+     ds de dm←1 1 ¯1{
+         ⍵+.×2*⍺×(⍺=¯1)+⍳≢⍵
+     }¨bs(⌽be)bm
+     (¯1*ds)×(2*de-127)×1+dm
+ }

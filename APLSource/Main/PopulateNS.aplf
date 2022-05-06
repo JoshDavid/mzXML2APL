@@ -1,0 +1,11 @@
+ PopulateNS←{
+⍝ ⍺ ←→ Namespace (returns new one if none given)
+⍝ ⍵ ←→ Array of Key/Value pairs
+⍝ ← ←→ Namespace with keys/vals inserted
+     ⍺←⎕NS''
+     0∊⍴⍵:⍺
+     k v←⊃⍵
+     q←'''' ⍝ obv make this conditioanl (index off isquote or not)
+     _←⍎'⍺.',k,'←'q,v,q
+     ⍺ ∇ 1↓⍵
+ }

@@ -1,0 +1,11 @@
+ ReadFile←{
+⍝ ⍵ ←→ file path
+⍝ ← ←→ Namespace Result
+⍝ ← ←→ [1] Info namespace
+⍝ ← ←→ [2] Scans namespace
+     r←⎕NS''
+     t←RawRead ⍵
+     r.Info←ProcessInfo t
+     r.Scans←ProcessScans t
+     r
+ }

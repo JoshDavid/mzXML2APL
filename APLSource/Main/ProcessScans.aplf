@@ -1,0 +1,14 @@
+ ProcessScans←{
+ ⍝ ⍵ ←→ XML Matrix
+ ⍝ ← ←→ Array of Scan namespace
+ ⍝ For now we just work with 32 prec -- but make 64 work as well
+     i←⍸(⊂'peaks')⍷⍵[;2]
+     ⍵∘{
+         ns←PopulateNS↓⊃⍺[⍵;4]
+         ns.precision≢'32':∘∘∘ ⍝ NOT YET IMPLEMENTED
+         ⍝ ↑ make above read in as numeric
+         ns.byteOrder≢'network':∘∘∘
+         ns.peaks←DecodePeaks⊃⍺[⍵;3]
+         ns
+     }¨i
+ }

@@ -1,0 +1,5 @@
+ RunTests←{
+     f←'T'⎕THIS.⎕NL-3
+     b←{⍎⍵,' 0'}¨f
+     f,⍪'Passed' 'Failed'[⎕IO+b]
+ }

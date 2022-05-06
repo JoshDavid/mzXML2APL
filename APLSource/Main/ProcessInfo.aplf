@@ -1,0 +1,11 @@
+ ProcessInfo←{
+⍝ ⍵ ←→ XML Matrix
+⍝ ← ←→ Info namespace
+⍝ For now, just populate level 1 run info
+⍝ TODO: Also get Instrument info -- and all immediate children?
+     ns←⎕NS''
+     b←1=⍵[;1]
+     b∧←(⊂'msRun')⍷⍵[;2]
+     r←↓⊃⍵[⍸b;4]
+     PopulateNS r
+ }
