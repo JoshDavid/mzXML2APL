@@ -1,0 +1,10 @@
+ Base64Decode←{
+ ⍝ ⍵ ←→ Base64 encoded text
+ ⍝ ← ←→ Original text
+     t←⎕A,⎕C ⎕A,⎕D,'+/'
+     i←(t⍳⍵)-⎕IO
+     b←∊(6⍴2)∘⊤¨i
+     p←{⍵⊂⍨(≢⍵)⍴8↑1}b
+     XPadding←⍵∘{⍵↓⍨-+/∧\⌽'='=⍺}
+     ⎕UCS 2⊥¨XPadding p
+ }

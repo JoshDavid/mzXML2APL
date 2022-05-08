@@ -2,6 +2,7 @@
 ⍝ ⍵ ←→ array of encoded Peaks data
      ⎕USING←'System'
      d←Convert.FromBase64String⊂⍵
+     ⍝ ↑ Write some more tests before replacing with Base64Encode
      s←⎕UCS d
      b←11 ⎕DR s
      m←(32÷⍨≢b)32⍴b

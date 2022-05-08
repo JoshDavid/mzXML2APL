@@ -1,0 +1,14 @@
+ TestB64Encode←{
+     F←##.Main.Base64Encode
+     a←'TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu'
+     a≢F'Many hands make light work.':1
+     'TWFu'≢F'Man':1
+     'TWE='≢F'Ma':1
+     'TQ=='≢F'M':1
+     'bGlnaHQgd29yay4='≢F'light work.':1
+     'bGlnaHQgd29yaw=='≢F'light work':1
+     'bGlnaHQgd29y'≢F'light wor':1
+     'bGlnaHQgd28='≢F'light wo':1
+     'bGlnaHQgdw=='≢F'light w':1
+     0
+ }

@@ -1,0 +1,10 @@
+ Base64Encode←{
+ ⍝ ⍵ ←→ Text to encode
+ ⍝ ← ←→ Base64 encoded text
+     b←∊(8⍴2)∘⊤¨⎕UCS ⍵
+     PadDelta←{⍵-⍨⍺×⌈⍵÷⍺}
+     Pad←{d x←⍺ ⋄ ⍵,(d PadDelta≢⍵)⍴x}
+     p←{⍵⊂⍨(≢⍵)⍴6↑1}6 0 Pad b
+     t←⎕A,⎕C ⎕A,⎕D,'+/'
+     4 '='Pad t[⎕IO+2⊥¨p]
+ }

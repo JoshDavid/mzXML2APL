@@ -1,0 +1,16 @@
+ TestB64Decode←{
+     F←##.Main.Base64Decode
+     a←'TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu'
+     a←'Many hands make light work.'
+     a≢F'TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu':1
+     'Man'≢F'TWFu':1
+     'Ma'≢F'TWE=':1
+     (,'M')≢F'TQ==':1
+     'light work.'≢F'bGlnaHQgd29yay4=':1
+     'light work'≢F'bGlnaHQgd29yaw==':1
+     'light wor'≢F'bGlnaHQgd29y':1
+     'light wo'≢F'bGlnaHQgd28=':1
+     'light w'≢F'bGlnaHQgdw==':1
+     (⎕UCS 96 0 67)≢F'YABD':1
+     0
+ }
