@@ -4,7 +4,7 @@
 ⍝ ← ←→ [1] Info namespace
 ⍝ ← ←→ [2] Scans namespace
      r←⎕NS''
-     t←RawRead ⍵
+     t←ReadXML ⍵
      r.Info←ProcessInfo t
      r.Scans←ProcessScans t
      r

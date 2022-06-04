@@ -1,0 +1,5 @@
+ ReadXML←{
+⍝ ⍵ ←→ XML file path
+⍝ ← ←→ File contents as XML matrix
+     ⎕XML⊃⎕NGET ⍵
+ }
