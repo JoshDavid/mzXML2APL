@@ -1,5 +1,0 @@
- RawRead←{
-⍝ ⍵ ←→ file path
-⍝ ← ←→ Raw file text
-     ⎕XML⊃⎕NGET ⍵
- }
