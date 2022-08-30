@@ -1,0 +1,17 @@
+ TestDecodePeaks←{
+     p←'Q6vmnETGYABDsad4RHLAAEPUlBJEweAAQ9oAOEO3AABECC6IRWzgAEQOakhFztAARBrqUkYB8ABEIJfcRTEQAERKiMBEfwAARHAzHkQgQAA='
+     F←##.Main.DecodePeaks
+     r←0 2⍴⍬
+     r⍪←343.8016357 1587
+     r⍪←355.3083496 971
+     r⍪←425.1567993 1551
+     r⍪←436.001709 366
+     r⍪←544.7270508 3790
+     r⍪←569.6606445 6618
+     r⍪←619.6612549 8316
+     r⍪←642.3728027 2833
+     r⍪←810.1367188 1020
+     r⍪←960.7987061 641
+     Round←7∘(⍎⍕)
+     ~0=⌈.-/(Round∘,)¨(F p)(r) ⍝ ~0= more clear than 0≠ here IMO
+ }
