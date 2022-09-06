@@ -1,7 +1,7 @@
  Base64Encode←{
  ⍝ ⍵ ←→ Text to encode
  ⍝ ← ←→ Base64 encoded text
-     b←∊(8⍴2)∘⊤¨⎕UCS ⍵
+     b←,⍉(8⍴2)⊤⎕UCS ⍵
      PadDelta←{⍵-⍨⍺×⌈⍵÷⍺}
      Pad←{d x←⍺ ⋄ ⍵,(d PadDelta≢⍵)⍴x}
      p←{⍵⊂⍨(≢⍵)⍴6↑1}6 0 Pad b
